@@ -1,12 +1,11 @@
 import "./App.css";
 
-import { connect } from "react-redux";
-import personUpdate from "./store/Actions/PersonActions";
-import updateGame from "./store/Actions/GameActions";
-import fetchUsers from "./store/Actions/UserAction";
+// import { connect } from "react-redux";
+// import personUpdate from "./store/Actions/PersonActions";
+// import updateGame from "./store/Actions/GameActions";
+// import fetchUsers from "./store/Actions/UserAction";
 
 import React from "react";
-import SideBarComp from "./Components/Fixed/SideBar";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,11 +13,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <SideBarComp />
-      </div>
-    );
+    return <div className="App">{/* <SideBarComp /> */}</div>;
   }
 }
 
@@ -41,24 +36,24 @@ class App extends React.Component {
           ))
         )} */
 }
-const mapStateToProps = state => {
-  return {
-    person: state.person,
-    game: state.game,
-    users: state.users
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     person: state.person,
+//     game: state.game,
+//     users: state.users
+//   };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updatePerson: () => {
-      dispatch(personUpdate);
-    },
-    updateGame: () => {
-      dispatch(updateGame);
-    },
-    fetchUsers: () => dispatch(fetchUsers)
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     updatePerson: () => {
+//       dispatch(personUpdate);
+//     },
+//     updateGame: () => {
+//       dispatch(updateGame);
+//     },
+//     fetchUsers: () => dispatch(fetchUsers)
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
