@@ -1,17 +1,31 @@
 import React from "react";
 import { Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import DropdownComp from "./DropDown";
 
-class searchBarComponent extends React.Component {
+class SearchBarComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <Form>
+      <Form
+        style={{
+          width: "200px",
+          float: "left"
+        }}
+      >
         <FormGroup>
-          <Label for="exampleSearch">Search</Label>
           <Input
             type="search"
             name="search"
             id="exampleSearch"
             placeholder="searchBy"
+            style={{
+              width: "200px",
+              float: "left",
+              borderRadius: "0",
+              marginLeft: "10px"
+            }}
           />
         </FormGroup>
       </Form>
@@ -19,4 +33,4 @@ class searchBarComponent extends React.Component {
   }
 }
 
-export default searchBarComponent;
+export default SearchBarComponent;

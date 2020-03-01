@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col } from "reactstrap";
 import TotalCompaigns from "./TotalCompaigns";
 import TotalAgents from "./TotalAgents";
 import TotalTransactions from "./TotalTransactions";
@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <Row lg="12">
+      <Row style={{ backgroundColor: "yellow" }}>
         <Col lg="4">
           <TotalCompaigns />
         </Col>

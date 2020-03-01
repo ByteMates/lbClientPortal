@@ -1,6 +1,6 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-
+import "./Agents/Table.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 class DatePickerComp extends React.Component {
@@ -19,6 +19,7 @@ class DatePickerComp extends React.Component {
       <DatePicker
         selected={this.state.startDate}
         onChange={this.handleChange}
+        className="datePickerStyles"
       />
     );
   }

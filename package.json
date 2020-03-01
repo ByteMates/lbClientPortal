@@ -26,6 +26,7 @@
     "react-scripts": "3.4.0",
     "react-sidebar": "^3.0.2",
     "reactstrap": "^8.4.1",
+    "reactstrap-date-picker": "0.0.7",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.0.1"

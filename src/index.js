@@ -8,6 +8,7 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Login from "./Components/Login/Login";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
+import Profile from "./Components/profile/Profile";
 
 const hist = createBrowserHistory();
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Route path="/home" component={Home} />
       <Route path="/forgetPassword" component={ForgetPassword} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/home/profile" component={Profile} />
     </Switch>
   </Router>,
   document.getElementById("root")

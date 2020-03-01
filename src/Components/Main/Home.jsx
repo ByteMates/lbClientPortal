@@ -1,28 +1,26 @@
-import "./Home.css";
-
-import React from "react";
-import SideBarComp from "../Fixed/SideBar";
-import TopBar from "../Fixed/TopBar";
+import {
+  faBullhorn,
+  faCheckCircle,
+  faHome,
+  faPersonBooth,
+  faStickyNote,
+  faUsers
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Breadcrumbs from "@trendmicro/react-breadcrumbs";
 import SideNav, { NavIcon, NavItem, NavText } from "@trendmicro/react-sidenav";
 // Be sure to include styles at some point, probably during your bootstraping
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import Breadcrumbs from "@trendmicro/react-breadcrumbs";
-import styled from "styled-components";
 import ensureArray from "ensure-array";
-import Anchor from "@trendmicro/react-anchor";
-
-import {
-  faHome,
-  faUsers,
-  faBullhorn,
-  faCheckCircle,
-  faStickyNote
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Dashboard from "../Dashboard/Dashboard";
+import React from "react";
+import styled from "styled-components";
 import Agents from "../Agents/Agents";
-import Compaigns from "../Compaigns/Compaigns";
 import Attendence from "../Attendence/Attendence";
+import Compaigns from "../Compaigns/Compaigns";
+import Dashboard from "../Dashboard/Dashboard";
+import TopBar from "../Fixed/TopBar";
+import Profile from "../profile/Profile";
+import "./Home.css";
 
 const Main = styled.main`
   position: relative;
@@ -33,7 +31,6 @@ const Main = styled.main`
 `;
 
 const detComponent = item => {
-  debugger;
   if (item === "dashboard") {
     return <Dashboard />;
   } else if (item === "Agents") {
@@ -42,6 +39,8 @@ const detComponent = item => {
     return <Compaigns />;
   } else if (item === "Attendence") {
     return <Attendence />;
+  } else if (item === "profile") {
+    return <Profile />;
   }
 };
 class Home extends React.Component {
@@ -55,7 +54,6 @@ class Home extends React.Component {
   };
 
   onSelect = selected => {
-    debugger;
     this.setState({ selected: selected });
   };
   onToggle = expanded => {
@@ -68,13 +66,13 @@ class Home extends React.Component {
     compaigns: "compaigns",
     Attendence: "Attendence",
     reports: ["Reports"],
+    profile: "profile",
     "settings/policies": ["Settings", "Policies"],
     "settings/network": ["Settings", "Network"]
   };
   renderBreadcrumbs() {
     const { selected } = this.state;
     const list = ensureArray(this.pageTitle[selected]);
-    debugger;
 
     return (
       <Breadcrumbs style={{ color: "#e8e8e8" }}>
@@ -168,6 +166,17 @@ class Home extends React.Component {
                     />
                   </NavIcon>
                   <NavText>Bulk</NavText>
+                </NavItem>
+                <NavItem eventKey="profile">
+                  <NavIcon>
+                    <FontAwesomeIcon
+                      icon={faPersonBooth}
+                      style={{ fontSize: "1.75em" }}
+                    />
+                  </NavIcon>
+                  <NavText style={{ paddingRight: 32 }} title="profile">
+                    Profile
+                  </NavText>
                 </NavItem>
               </SideNav.Nav>
             </SideNav>

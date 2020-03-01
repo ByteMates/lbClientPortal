@@ -29,7 +29,7 @@ class LocationTrack extends React.Component {
     return (
       <img
         src={mapImage}
-        style={{ width: "100%", height: "95%", marginTop: "20px" }}
+        style={{ width: "100%", height: "85%", marginTop: "20px" }}
       />
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import profileImg from "../../Images/uni.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Navbar,
@@ -24,6 +25,9 @@ class TopBar extends React.Component {
     super(props);
   }
 
+  gotoLogin = () => {
+    this.props.history.push("/");
+  };
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "white" }}>
@@ -48,13 +52,23 @@ class TopBar extends React.Component {
               Copy Link
             </Button>
           </Nav>
+          <img
+            src={profileImg}
+            style={{
+              width: "40px",
+              height: "40px",
+              float: "left",
+              borderRadius: "50%",
+              border: "1px solid lightgray"
+            }}
+          />
           <Nav>
             <NavDropdown title="Unilever" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="/home/profile">
                 <FontAwesomeIcon icon={faUserAlt} />
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/">
                 <FontAwesomeIcon icon={faSignInAlt} />
                 Logout
               </NavDropdown.Item>

@@ -1,24 +1,7 @@
-import React from "react";
-import {
-  Button,
-  ButtonGroup,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Table,
-  Row,
-  Col
-} from "reactstrap";
-
-import {
-  faHome,
-  faUsers,
-  faBullhorn,
-  faCheckCircle,
-  faStickyNote
-} from "@fortawesome/free-solid-svg-icons";
+import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { Card, CardHeader, CardTitle } from "reactstrap";
 
 class TotalTransactions extends React.Component {
   constructor(props) {

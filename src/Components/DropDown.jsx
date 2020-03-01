@@ -1,27 +1,35 @@
 import React, { useState } from "react";
 import {
-  ButtonDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
 
-var items = ["Name", "Id", "Mobile"];
-class DropdownComp extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <ButtonDropdown>
-        <DropdownToggle caret>{items[0]}</DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header>{items[0]}</DropdownItem>
-          <DropdownItem header>{items[1]}</DropdownItem>
-          <DropdownItem header>{items[2]}</DropdownItem>
-        </DropdownMenu>
-      </ButtonDropdown>
-    );
-  }
-}
+const DropdownComp = props => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen(prevState => !prevState);
+
+  return (
+    <Dropdown
+      isOpen={dropdownOpen}
+      toggle={toggle}
+      style={{
+        borderRadius: "0",
+        width: "100px",
+        float: "left"
+      }}
+    >
+      <DropdownToggle caret style={{ borderRadius: "0" }}>
+        Name
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem>Id</DropdownItem>
+        <DropdownItem>Mobile No</DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+  );
+};
+
 export default DropdownComp;
