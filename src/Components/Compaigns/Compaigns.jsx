@@ -1,11 +1,12 @@
-import { faDownload, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "reactstrap";
-import DownloadModal from "../../ModalPopup";
+import DownloadButtonComp from "../../DownloadButton";
 import "../Agents/Table.css";
-import DropdownComp from "../DropDown";
 import SearchBarComponent from "../SearchBar";
+import DownloadModal from "../../ModalPopup";
+import DropdownComp from "../DropDown";
 
 class Compaigns extends React.Component {
   constructor(props) {
@@ -93,6 +94,7 @@ class Compaigns extends React.Component {
             </Button>{" "}
             <SearchBarComponent />
             <DropdownComp
+              DropList={["Name", "ID", "Product"]}
               style={{
                 float: "left",
                 marginTop: "20px",

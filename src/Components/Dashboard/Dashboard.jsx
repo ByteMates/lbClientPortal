@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <Row style={{ backgroundColor: "yellow" }}>
+      <Row>
         <Col lg="4">
           <TotalCompaigns />
         </Col>

@@ -22,11 +22,12 @@ const DropdownComp = props => {
       }}
     >
       <DropdownToggle caret style={{ borderRadius: "0" }}>
-        Name
+        {props.DropList[0]}
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>Id</DropdownItem>
-        <DropdownItem>Mobile No</DropdownItem>
+        {props.DropList.map((item, key) => (
+          <DropdownItem>{item}</DropdownItem>
+        ))}
       </DropdownMenu>
     </Dropdown>
   );

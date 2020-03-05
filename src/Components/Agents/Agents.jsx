@@ -17,8 +17,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import DropdownComp from "../DropDown";
 import SearchBarComponent from "../SearchBar";
+import { CompaignsDetailModal } from "../../ModalPopup";
+import SwitchExample from "../Switch";
 
 class Agents extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalOpen: false
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    debugger;
+    this.setState({
+      isModalOpen: !this.state.isModalOpen
+    });
+  }
+
   render() {
     return (
       <>
@@ -57,6 +74,7 @@ class Agents extends React.Component {
           >
             <SearchBarComponent />
             <DropdownComp
+              DropList={["Mobile#", "Agent Name", "Agent Id"]}
               style={{
                 float: "left",
                 marginTop: "20px",
@@ -66,7 +84,10 @@ class Agents extends React.Component {
             />
           </div>
         </div>
-
+        <CompaignsDetailModal
+          isOpen={this.state.isModalOpen}
+          toggle={this.toggle}
+        />
         <table className="customers">
           <tr>
             <td>Name</td>
@@ -83,11 +104,15 @@ class Agents extends React.Component {
             <td>034224578</td>
             <td>12:34 Wed,15 Jan 2020</td>
             <td>12:34 Wed,15 Jan 2020</td>
-            <td>Active/InActive</td>
+            <td>
+              Active <SwitchExample /> InActive
+            </td>
             <td>Compaign1</td>
             <td>Compaign2</td>
             <td>
-              <Button color="primary">Edit</Button>{" "}
+              <Button color="primary" onClick={this.toggle}>
+                Edit
+              </Button>{" "}
             </td>
           </tr>
           <tr>
@@ -96,25 +121,31 @@ class Agents extends React.Component {
             <td>034224578</td>
             <td>12:34 Wed,15 Jan 2020</td>
             <td>12:34 Wed,15 Jan 2020</td>
-            <td>Active/InActive</td>
+            <td>
+              Active <SwitchExample /> InActive
+            </td>
             <td>Compaign1</td>
             <td>Compaign2</td>
             <td>
-              <Button color="primary">Edit</Button>{" "}
+              <Button color="primary" onClick={this.toggle}>
+                Edit
+              </Button>{" "}
             </td>
           </tr>
           <tr>
             <td>Meher Ali</td>
             <td>AG5454</td>
             <td>034224578</td>
+            <td>12:34 Wed,15 Jan 2020 </td>
             <td>12:34 Wed,15 Jan 2020</td>
-            <td>12:34 Wed,15 Jan 2020</td>
-            <td>Active/InActive</td>
+            <td>
+              Active <SwitchExample /> InActive
+            </td>
             <td>Compaign1</td>
             <td>Compaign2</td>
-            <td>
-              <Button color="primary">Edit</Button>{" "}
-            </td>
+            <Button color="primary" onClick={this.toggle}>
+              Edit
+            </Button>{" "}
           </tr>
         </table>
       </>

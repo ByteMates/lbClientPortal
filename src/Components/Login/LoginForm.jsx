@@ -1,7 +1,17 @@
 import React from "react";
-import { Form, FormGroup, Input } from "reactstrap";
+import {
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText
+} from "reactstrap";
 import Logo from "../../Images/logo.png";
 import "./Login.css";
+
+import { faUserCircle, faKey } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { withRouter } from "react-router-dom";
 
@@ -14,20 +24,29 @@ class LoginForm extends React.Component {
       <Form className="textfieldC">
         <img src={Logo} />
         <FormGroup className="marginForms">
-          <Input
-            type="email"
-            name="email"
-            id="exampleEmail"
-            placeholder="Enter Email"
-          />
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>
+                <FontAwesomeIcon icon={faUserCircle} />
+              </InputGroupText>
+            </InputGroupAddon>
+            <Input placeholder="Enter email" />
+          </InputGroup>
         </FormGroup>
         <FormGroup>
-          <Input
-            type="password"
-            name="password"
-            id="examplePassword"
-            placeholder="Enter password"
-          />
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>
+                <FontAwesomeIcon icon={faKey} />
+              </InputGroupText>
+            </InputGroupAddon>
+            <Input
+              type="password"
+              name="password"
+              id="examplePassword"
+              placeholder="Enter password"
+            />
+          </InputGroup>
         </FormGroup>
         <input
           type="button"

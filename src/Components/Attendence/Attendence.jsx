@@ -77,6 +77,7 @@ class Attendence extends React.Component {
 
             <SearchBarComponent />
             <DropdownComp
+              DropList={["Name", "Mobile"]}
               style={{
                 float: "left",
                 marginTop: "20px",
