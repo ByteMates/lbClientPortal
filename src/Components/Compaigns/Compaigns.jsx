@@ -7,6 +7,7 @@ import "../Agents/Table.css";
 import SearchBarComponent from "../SearchBar";
 import DownloadModal from "../../ModalPopup";
 import DropdownComp from "../DropDown";
+import SwitchExample from "../Switch";
 
 class Compaigns extends React.Component {
   constructor(props) {

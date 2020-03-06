@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
           <TotalTransactions />
         </Col>
         <Col lg="8">
-          <LocationTrack />
+          <LocationTrack style={{ width: "100%", height: "500px" }} />
         </Col>
       </Row>
     );
